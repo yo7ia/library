@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+ext {
+    // Where you will see your artifact in Bintray's web interface
+    // The "bintrayName" should match the name of the Bintray repro.
+    bintrayRepo = 'maven'
+    bintrayName = 'library'
+
+    // Maven metadata
+    publishedGroupId = 'com.nichepharma.application'
+    libraryName = 'library'
+    // Save yourself a head ache, and set this equal to the name of the Android Studio library
+    // module. The artifact name needs to match the name of the library.
+    artifact = 'library'
+
+    libraryDescription = 'a wrapper of qmark app libraries\n' +
+            '\n' +
+            'this library contains:\n' +
+            '\n' +
+            '1- Category adapter - can be used to make expandable listview\n' +
+            '\n' +
+            '2- convert image to string and vice versa\n' +
+            '\n' +
+            '3- Image loader from url\n' +
+            '\n' +
+            '4- Progress Wheel - useful if making a countdown timer kinda cool\n' +
+            '\n' +
+            '5- GPS Tracker\n' +
+            '\n' +
+            'this library was made for personal use , so feel free to use it if u like ;)'
+    libraryVersion = '1.0.2'
+    developerId = 'a7med-yo7ia'
+    developerName = 'ahmed yehia'
+    developerEmail = 'a7med.yo7ia@gmail.com'
+}
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.1.1'
+}
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'
