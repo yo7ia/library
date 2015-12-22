@@ -27,7 +27,7 @@ ext {
             '5- GPS Tracker\n' +
             '\n' +
             'this library was made for personal use , so feel free to use it if u like ;)'
-    libraryVersion = '1.0.2'
+    libraryVersion = '1.0.3'
     developerId = 'a7med-yo7ia'
     developerName = 'ahmed yehia'
     developerEmail = 'a7med.yo7ia@gmail.com'
