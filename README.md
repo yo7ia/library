@@ -18,4 +18,4 @@ this library was made for personal use , so feel free to use it if u like ;)
 
 #add dependency to gradle
 
-compile ('com.nichepharma.application:library:1.0.3')
+compile ('com.nichepharma.application:library:1.0.4')
