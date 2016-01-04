@@ -46,22 +46,7 @@ public class Categoryclass {
 		}
 		
 	}
-	private void generateChildren2(String id, ArrayList<String> List) {
 
-		//Random rand = new Random();
-		for(int i=0; i < List.size(); i++) {
-			String x=List.get(i).substring(List.get(i).indexOf("//")+2, List.get(i).length());
-			Log.d("idsss", x+"--"+id);
-			if(x.trim().equalsIgnoreCase(id.trim()))
-			{
-
-				Categoryclass cat = new Categoryclass(List.get(i).substring(0, List.get(i).indexOf("-")),List.get(i).substring(List.get(i).indexOf("--")+2, List.get(i).length()));
-				this.children.add(cat);
-			}
-
-		}
-
-	}
 	public static ArrayList<Categoryclass> getCategories(ArrayList<String> List, ArrayList<String> List2) {
 		ArrayList<Categoryclass> categories = new ArrayList<Categoryclass>();
 		for(int i = 0; i < List.size() ; i++) {
@@ -73,17 +58,7 @@ public class Categoryclass {
 		}
 		return categories;
 	}
-	public static ArrayList<Categoryclass> getCategoriess(ArrayList<String> List) {
-		ArrayList<Categoryclass> categories = new ArrayList<Categoryclass>();
-		for(int i = 0; i < List.size() ; i++) {
-			String id=List.get(i).substring(List.get(i).indexOf("--")+2, List.get(i).length());
-			Categoryclass cat = new Categoryclass(List.get(i).substring(0, List.get(i).indexOf("-")),List.get(i).substring(List.get(i).indexOf("--")+2, List.get(i).length()));
-			cat.generateChildren2(id,List);
 
-			categories.add(cat);
-		}
-		return categories;
-	}
 	public static Categoryclass get(String name, ArrayList<String> List, ArrayList<String> List2)
 	{
 		ArrayList<Categoryclass> collection = Categoryclass.getCategories(List,List2);
